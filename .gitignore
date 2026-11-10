@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+data/outreach.db
+data/outbox/
+SUBMISSION_CHECKLIST.md
+HOW_IT_WORKS.md

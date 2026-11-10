@@ -1,0 +1,78 @@
+
+niche:
+  name: Fitness
+  platform: YouTube
+  # Queries sent to YouTube search (each page of 50 results costs 100 quota units).
+  search_queries:
+    - home workout for beginners
+    - strength training routine
+    - yoga for flexibility
+    - calisthenics progress
+    - weight loss journey workout
+    - running training tips
+    - gym workout vlog india
+    - healthy meal prep high protein
+  # Sub-niche -> keywords. Used for relevance scoring AND classification.
+  keywords:
+    strength training: [gym, strength, deadlift, squat, bench press, hypertrophy, bodybuilding, powerlifting, muscle, dumbbell, barbell, weightlifting]
+    home workouts: [home workout, no equipment, hiit, bodyweight, full body workout, abs workout, cardio workout, fat burn]
+    yoga and mobility: [yoga, mobility, stretching, flexibility, pilates, asana, pranayama, surya namaskar]
+    calisthenics: [calisthenics, pull ups, pull-ups, push ups, push-ups, handstand, muscle up, planche]
+    running and endurance: [running, marathon, 5k, 10k, cycling, triathlon, endurance]
+    nutrition: [meal prep, protein, diet plan, calorie, calories, macros, healthy recipe, nutrition, weight loss, fat loss]
+    general fitness: [fitness, workout, exercise, training, transformation]
+  # Brand-safety: any hit here fails the brand-fit check.
+  negative_keywords: [steroid, steroids, sarms, betting, casino, gambling, giveaway scam, crypto signals]
+
+discovery:
+  target_candidates: 150      # stop searching once this many unique channels are found
+  max_pages_per_query: 2      # 50 videos per page
+  region_code: IN             # ISO country used to bias search ("" = worldwide)
+  relevance_language: en
+  published_within_days: 90   # only search recently uploaded videos -> active creators
+  recent_videos: 8            # videos per channel used for engagement + content analysis
+
+filters:
+  allowed_platforms: [YouTube]
+  min_followers: 5000
+  max_followers: 100000
+  min_engagement_rate: 1.5     # percent, see README for the formula
+  min_content_relevance: 50    # percent of recent videos that match the niche keywords
+  max_days_since_upload: 60
+  min_video_count: 10
+  allowed_countries: []        # e.g. [IN, US, GB]; empty = no geography restriction
+  allow_unknown_country: true  # many channels do not publish a country
+
+# The brand doing the outreach. THIS IS A DEMO BRAND - replace with your own.
+brand:
+  name: PulseKit
+  product: resistance-band home workout kits with a guided training app
+  audience: people who train at home and want simple, equipment-light routines
+  value_proposition: free kit, a paid fee per video and a 15% affiliate commission
+  sender_name: Niyati Singh 
+  sender_role: Creator Partnerships
+  collaboration_offers:
+    UGC content creation: a paid UGC package (2 short videos using the kit, usage rights for 60 days)
+    Affiliate campaign: a personal discount code with 15% commission on every sale
+    Paid product placement: a paid 60-second product placement in an upcoming workout video
+    Barter collaboration: a free kit and app access in exchange for an honest review
+
+llm:
+  provider: groq      
+  models:
+    gemini: [gemini-3.5-flash, gemini-2.5-flash, gemini-3.1-flash-lite, gemini-2.5-flash-lite]
+    groq: [openai/gpt-oss-120b, llama-3.3-70b-versatile]
+  temperature: 0.8
+  requests_per_minute: 10      # stay inside free-tier limits
+  max_attempts: 3              # regenerate if word counts / checks fail
+
+messages:
+  email_min_words: 60
+  email_max_words: 90
+  dm_min_words: 15
+  dm_max_words: 30
+
+sending:
+  mode: dry_run                # dry_run | test | live   (CLI --mode overrides)
+  daily_cap: 50
+  delay_seconds: 2
