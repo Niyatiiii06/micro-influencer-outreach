@@ -204,6 +204,5 @@ tests/test_pipeline.py  10 tests (fake channels, fake YouTube functions)
 
 ## 9. Data integrity statement
 
-Every record in `data/` comes from a live API response or from text the creator published. The synthetic channels in `tests/` are used only by the test suite and are never written to the dataset.#   m i c r o - i n f l u e n c e r - o u t r e a c h 
- 
- 
+Every record in `data/` comes from a live API response or from text the creator published. The synthetic channels in `tests/` are used only by the test suite and are never written to the dataset.# micro-influencer-outreach
+
