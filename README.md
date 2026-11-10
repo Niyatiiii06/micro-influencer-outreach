@@ -44,7 +44,7 @@ Libraries: `requests`, `PyYAML`, `python-dotenv`, `pytest`. Everything else is t
 ## 2. Setup
 
 ```bash
-git clone <https://github.com/Niyatiiii06/micro-influencer-outreach> && cd influencer-outreach
+git clone https://github.com/Niyatiiii06/micro-influencer-outreach && cd micro-influencer-outreach
 python -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
 python -m pip install -r requirements.txt
@@ -204,5 +204,6 @@ tests/test_pipeline.py  10 tests (fake channels, fake YouTube functions)
 
 ## 9. Data integrity statement
 
-Every record in `data/` comes from a live API response or from text the creator published. The synthetic channels in `tests/` are used only by the test suite and are never written to the dataset.#   m i c r o - i n f l u e n c e r - o u t r e a c h  
+Every record in `data/` comes from a live API response or from text the creator published. The synthetic channels in `tests/` are used only by the test suite and are never written to the dataset.#   m i c r o - i n f l u e n c e r - o u t r e a c h 
+ 
  
